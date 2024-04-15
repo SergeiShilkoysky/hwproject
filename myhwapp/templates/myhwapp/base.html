@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" style="background: none;">
+<head>
+    {% block head %}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    {% block title %} <title>My base shablons</title>{% endblock %}
+    {% endblock %}
+</head>
+<body>
+<div class="field">
+    <ul class="menu">
+        <li class="nav-item"><a href="{% url 'index' %}" class="reference">Main</a></li>
+        <li class="nav-item">
+            <a href="{% url 'about' %}" class="reference" target="_blank">About</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'contacts' %}" class="reference" target="_blank">Contacts</a>
+        </li>
+    </ul>
+    {% block content %} Страница не заполнена {% endblock %}
+    <div class="div">
+        {% block footer %}
+        <hr/>
+        Copyright 2022 by <a class="reference" href="https://gb.ru/" target="_blank">HM@project</a>.
+        {%endblock%}
+    </div>
+</div>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

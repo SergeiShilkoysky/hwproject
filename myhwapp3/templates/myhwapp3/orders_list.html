@@ -1,0 +1,37 @@
+{% extends 'myhwapp3/base.html' %}
+
+{% block title %}
+<h1 class="h1_header">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: left; align-items: center; margin-top: 30px;">
+
+
+    <table style="border-collapse: collapse, width: 900px">
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; ">id_orders</td>
+            <td style="border: 3px solid gray; padding: 10px">client</td>
+            <td style="border: 3px solid gray; padding: 10px">id_client</td>
+            <td style="border: 3px solid gray; padding: 10px">basket_products</td>
+            <td style="border: 3px solid gray; padding: 10px">order_total</td>
+            <td style="border: 3px solid gray; padding: 10px">date_ordered</td>
+            <td style="border: 3px solid gray; padding: 10px">date_change</td>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; width: 100px">{{ item.id }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.client_store.name }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.client_store.id }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.basket_products }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.order_total }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.date_ordered }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.date_change }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}
+

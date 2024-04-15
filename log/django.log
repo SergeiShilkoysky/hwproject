@@ -1,0 +1,850 @@
+INFO 2024-04-11 16:11:20,574 add_data_hw4 19564 17224 -------- created 5 client - completed---------
+INFO 2024-04-11 16:11:20,966 add_data_hw4 19564 17224 for log: created 5 products - completed
+INFO 2024-04-11 16:11:23,244 add_data_hw4 19564 17224 created 5 orders - completed
+INFO 2024-04-11 16:11:47,161 add_data_hw4 14444 18152 -------- created 5 client - completed---------
+INFO 2024-04-11 16:11:48,633 add_data_hw4 14444 18152 for log: created 15 products - completed
+INFO 2024-04-11 16:11:51,177 add_data_hw4 14444 18152 created 5 orders - completed
+INFO 2024-04-11 17:18:59,553 autoreload 13220 17996 Watching for file changes with StatReloader
+INFO 2024-04-11 17:20:43,842 basehttp 13220 5528 "GET /hw4/update_product/ HTTP/1.1" 200 4355
+INFO 2024-04-11 17:21:56,526 views 13220 5528  update name_product='new_prod_with_form', description='new_prod_with_form', price=65.0, quantity=20, date_add=datetime.date(2024, 4, 11)
+ERROR 2024-04-11 17:21:56,576 log 13220 5528 Internal Server Error: /hw4/update_product/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\homework\hwproject\myhwapp4\views.py", line 102, in update_product
+    product.name_product = name_product
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name_product'
+ERROR 2024-04-11 17:21:56,579 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 500 78958
+INFO 2024-04-11 17:22:55,098 views 13220 5528  update name_product='new_prod_with_form', description='new_prod_with_form', price=65.0, quantity=20, date_add=datetime.date(2024, 4, 11)
+INFO 2024-04-11 17:22:55,392 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 200 2264
+INFO 2024-04-11 17:23:28,708 views 13220 5528  update name_product='new_prod_with_form', description='new_prod_with_form', price=65.0, quantity=20, date_add=datetime.date(2024, 4, 11)
+INFO 2024-04-11 17:23:28,879 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 200 2280
+INFO 2024-04-11 17:23:44,546 basehttp 13220 5528 "GET /hw4/update_product/ HTTP/1.1" 200 4355
+INFO 2024-04-11 17:23:47,112 views 13220 5528  update name_product='new_prod_with_form', description='new_prod_with_form', price=65.0, quantity=20, date_add=datetime.date(2024, 4, 11)
+INFO 2024-04-11 17:23:47,220 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 200 2280
+INFO 2024-04-11 17:25:59,891 basehttp 13220 5528 "GET /hw4/update_product/ HTTP/1.1" 200 4355
+INFO 2024-04-11 17:27:01,492 views 13220 5528  update name_product='prod_with_form', description='prod_with_form', price=22.0, quantity=22, date_add=datetime.date(2024, 4, 11)
+ERROR 2024-04-11 17:27:07,132 log 13220 5528 Internal Server Error: /hw4/update_product/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\homework\hwproject\myhwapp4\views.py", line 109, in update_product
+    product.save()
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\base.py", line 1036, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\base.py", line 1101, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\query.py", line 1278, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "E:\python_django\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: database is locked
+ERROR 2024-04-11 17:27:07,142 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 500 171519
+INFO 2024-04-11 17:27:19,106 views 13220 5528  update name_product='prod_with_form', description='prod_with_form', price=22.0, quantity=22, date_add=datetime.date(2024, 4, 11)
+INFO 2024-04-11 17:27:19,289 basehttp 13220 5528 "POST /hw4/update_product/ HTTP/1.1" 200 2259
+INFO 2024-04-14 01:22:38,937 autoreload 17684 9008 Watching for file changes with StatReloader
+WARNING 2024-04-14 01:22:41,904 log 17684 3288 Not Found: /
+WARNING 2024-04-14 01:22:41,905 basehttp 17684 3288 "GET / HTTP/1.1" 404 2478
+INFO 2024-04-14 01:22:44,965 views 17684 3288 hw3 page accessed
+INFO 2024-04-14 01:22:45,130 basehttp 17684 3288 "GET /hw4/ HTTP/1.1" 200 2067
+INFO 2024-04-14 01:22:46,339 basehttp 17684 3288 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:22:46,503 basehttp 17684 3288 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2024-04-14 01:22:46,809 basehttp 17684 3288 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,810 basehttp 17684 3928 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,816 basehttp 17684 3288 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,817 basehttp 17684 4076 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,817 basehttp 17684 3928 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,818 basehttp 17684 10984 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:46,842 basehttp 17684 10984 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:50,034 basehttp 17684 10984 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:22:50,089 basehttp 17684 10984 "GET /admin/ HTTP/1.1" 200 10999
+INFO 2024-04-14 01:22:50,311 basehttp 17684 3928 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:50,311 basehttp 17684 10984 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:50,311 basehttp 17684 4076 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:22:59,995 basehttp 17684 4076 "GET /admin/myhwapp4/basketproduct/ HTTP/1.1" 200 10966
+INFO 2024-04-14 01:23:00,226 basehttp 17684 4076 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,227 basehttp 17684 3928 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,227 basehttp 17684 15592 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,227 basehttp 17684 3288 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,229 basehttp 17684 14572 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,233 basehttp 17684 15592 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,234 basehttp 17684 3928 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,234 basehttp 17684 4076 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,234 basehttp 17684 3288 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,238 basehttp 17684 10984 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:23:00,398 basehttp 17684 10984 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:00,429 basehttp 17684 10984 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,667 basehttp 17684 10984 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 26242
+INFO 2024-04-14 01:23:02,944 basehttp 17684 10984 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,944 basehttp 17684 4076 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,944 basehttp 17684 3928 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,949 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:23:02,953 basehttp 17684 3288 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,990 basehttp 17684 3288 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:02,993 basehttp 17684 3288 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:23:08,315 basehttp 17684 3288 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29815
+INFO 2024-04-14 01:23:08,532 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:23:15,764 basehttp 17684 3288 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21568
+INFO 2024-04-14 01:23:15,991 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:23:19,019 basehttp 17684 3288 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29815
+INFO 2024-04-14 01:23:19,232 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:23:39,718 basehttp 17684 3288 "GET /admin/auth/group/ HTTP/1.1" 200 11242
+INFO 2024-04-14 01:23:39,930 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:24:01,229 basehttp 17684 3288 "GET /admin/auth/group/add/ HTTP/1.1" 200 17985
+INFO 2024-04-14 01:24:01,496 basehttp 17684 3928 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,496 basehttp 17684 10984 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,496 basehttp 17684 4076 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,501 basehttp 17684 3288 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:24:01,504 basehttp 17684 3928 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,629 basehttp 17684 3928 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,630 basehttp 17684 3288 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:01,631 basehttp 17684 4076 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:24:33,473 basehttp 17684 4076 "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:24:33,510 basehttp 17684 4076 "GET /admin/auth/group/add/ HTTP/1.1" 200 18213
+INFO 2024-04-14 01:24:33,717 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:26:43,406 basehttp 17684 4076 "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:26:43,433 basehttp 17684 4076 "GET /admin/auth/group/ HTTP/1.1" 200 12970
+INFO 2024-04-14 01:26:43,653 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:26:46,098 basehttp 17684 4076 "GET /admin/auth/group/1/change/ HTTP/1.1" 200 18232
+INFO 2024-04-14 01:26:46,347 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:27:06,333 basehttp 17684 4076 "POST /admin/auth/group/1/change/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:27:06,359 basehttp 17684 4076 "GET /admin/auth/group/ HTTP/1.1" 200 12967
+INFO 2024-04-14 01:27:06,574 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:27:21,562 basehttp 17684 4076 "GET /admin/auth/group/add/ HTTP/1.1" 200 17985
+INFO 2024-04-14 01:27:21,813 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:27:42,860 basehttp 17684 4076 "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:27:42,889 basehttp 17684 4076 "GET /admin/auth/group/ HTTP/1.1" 200 13237
+INFO 2024-04-14 01:27:43,088 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:27:44,083 basehttp 17684 4076 "GET /admin/auth/user/ HTTP/1.1" 200 15178
+INFO 2024-04-14 01:27:44,340 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:28:15,121 basehttp 17684 4076 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:28:15,332 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:28:50,656 basehttp 17684 4076 "POST /admin/auth/user/add/ HTTP/1.1" 200 14328
+INFO 2024-04-14 01:28:50,896 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:29:17,152 basehttp 17684 4076 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:29:17,400 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:29:35,851 basehttp 17684 4076 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:29:36,056 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:29:46,277 basehttp 17684 4076 "GET /admin/auth/user/ HTTP/1.1" 200 15178
+INFO 2024-04-14 01:29:46,530 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:29:48,936 basehttp 17684 4076 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:29:49,147 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:30:18,451 basehttp 17684 4076 "POST /admin/auth/user/add/ HTTP/1.1" 200 14334
+INFO 2024-04-14 01:30:18,658 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:30:40,975 basehttp 17684 4076 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:30:41,035 basehttp 17684 4076 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 27857
+INFO 2024-04-14 01:30:41,288 basehttp 17684 20996 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:30:41,289 basehttp 17684 4908 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2024-04-14 01:30:41,292 basehttp 17684 4076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:30:41,463 basehttp 17684 4076 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:30:41,464 basehttp 17684 4908 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2024-04-14 01:31:07,407 basehttp 17684 4908 "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:31:07,434 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 15816
+INFO 2024-04-14 01:31:07,647 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:31:19,316 basehttp 17684 4908 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:31:19,573 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:31:33,537 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:31:33,735 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:31:53,383 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14328
+INFO 2024-04-14 01:31:53,618 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:32:04,227 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 15624
+INFO 2024-04-14 01:32:04,442 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:32:30,944 basehttp 17684 4908 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:32:31,202 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:32:46,641 basehttp 17684 4908 "GET /admin/auth/group/ HTTP/1.1" 200 13038
+INFO 2024-04-14 01:32:46,842 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:32:49,365 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 15624
+INFO 2024-04-14 01:32:49,606 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:32:53,296 basehttp 17684 4908 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:32:53,512 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:33:11,053 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:33:11,258 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:33:34,832 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:33:35,062 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:33:56,795 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:33:56,850 basehttp 17684 4908 "GET /admin/auth/user/3/change/ HTTP/1.1" 200 27857
+INFO 2024-04-14 01:33:57,057 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:34:09,682 basehttp 17684 4908 "POST /admin/auth/user/3/change/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:34:09,715 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 16251
+INFO 2024-04-14 01:34:09,959 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:34:16,676 basehttp 17684 4908 "GET /admin/auth/group/ HTTP/1.1" 200 13038
+INFO 2024-04-14 01:34:16,896 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:34:19,635 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 16059
+INFO 2024-04-14 01:34:19,858 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:34:25,185 basehttp 17684 4908 "GET /admin/auth/user/add/ HTTP/1.1" 200 14134
+INFO 2024-04-14 01:34:25,403 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:34:40,961 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14352
+INFO 2024-04-14 01:34:41,161 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:35:29,697 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14336
+INFO 2024-04-14 01:35:29,941 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:35:53,815 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14336
+INFO 2024-04-14 01:35:54,019 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:36:12,790 basehttp 17684 4908 "POST /admin/auth/user/add/ HTTP/1.1" 200 14333
+INFO 2024-04-14 01:36:13,034 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:36:17,106 basehttp 17684 4908 "GET /admin/auth/user/ HTTP/1.1" 200 16059
+INFO 2024-04-14 01:36:17,329 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:36:25,717 basehttp 17684 4908 "POST /admin/logout/ HTTP/1.1" 200 3553
+INFO 2024-04-14 01:36:27,073 basehttp 17684 4908 "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:36:27,087 basehttp 17684 4908 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+INFO 2024-04-14 01:36:30,631 basehttp 17684 4908 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:36:30,653 basehttp 17684 4908 "GET /admin/ HTTP/1.1" 200 13764
+INFO 2024-04-14 01:36:35,308 basehttp 17684 4908 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21568
+INFO 2024-04-14 01:36:35,542 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:36:41,349 basehttp 17684 4908 "GET /admin/myhwapp4/product/11/change/ HTTP/1.1" 200 17334
+INFO 2024-04-14 01:36:41,568 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:37:06,308 basehttp 17684 4908 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21568
+INFO 2024-04-14 01:37:15,696 basehttp 17684 4908 "POST /admin/myhwapp4/product/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:37:15,727 basehttp 17684 4908 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21761
+INFO 2024-04-14 01:37:15,976 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:37:16,087 basehttp 17684 4908 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2024-04-14 01:37:27,745 basehttp 17684 4908 "POST /admin/myhwapp4/product/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:37:27,777 basehttp 17684 4908 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21554
+INFO 2024-04-14 01:37:27,977 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:37:45,771 basehttp 17684 4908 "GET /admin/myhwapp4/product/?quantity=34 HTTP/1.1" 200 16525
+INFO 2024-04-14 01:37:46,041 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:37:50,932 basehttp 17684 4908 "GET /admin/myhwapp4/product/8/change/?_changelist_filters=quantity%3D34 HTTP/1.1" 200 17460
+INFO 2024-04-14 01:37:51,166 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:38:15,261 basehttp 17684 4908 "GET /admin/myhwapp4/product/?quantity=34 HTTP/1.1" 200 16525
+INFO 2024-04-14 01:38:27,636 basehttp 17684 4908 "GET /admin/myhwapp4/product/? HTTP/1.1" 200 21554
+INFO 2024-04-14 01:38:27,883 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:38:42,094 basehttp 17684 4908 "GET /admin/myhwapp4/product/?all= HTTP/1.1" 200 27511
+INFO 2024-04-14 01:38:42,306 basehttp 17684 4908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2024-04-14 01:38:53,042 log 17684 4908 Internal Server Error: /admin/myhwapp4/product/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 2018, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1650, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\homework\hwproject\myhwapp4\admin.py", line 99, in filter_30days
+    queryset.objects.filter(entered__lte=datetime.now() - timedelta(days=how_many_days)).update(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'objects'
+ERROR 2024-04-14 01:38:53,050 basehttp 17684 4908 "POST /admin/myhwapp4/product/?all= HTTP/1.1" 500 138639
+INFO 2024-04-14 01:41:03,352 autoreload 4356 15572 Watching for file changes with StatReloader
+WARNING 2024-04-14 01:41:05,760 log 4356 16204 Not Found: /
+WARNING 2024-04-14 01:41:05,761 basehttp 4356 16204 "GET / HTTP/1.1" 404 2478
+INFO 2024-04-14 01:41:09,351 basehttp 4356 16204 "GET /admin/ HTTP/1.1" 200 13764
+INFO 2024-04-14 01:41:13,735 basehttp 4356 16204 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 26242
+INFO 2024-04-14 01:41:13,978 basehttp 4356 16204 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:41:24,935 basehttp 4356 16204 "POST /admin/myhwapp4/client/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:41:24,978 basehttp 4356 16204 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 26243
+INFO 2024-04-14 01:41:25,189 basehttp 4356 16204 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:41:30,002 basehttp 4356 16204 "GET /admin/myhwapp4/client/9/change/ HTTP/1.1" 200 15410
+INFO 2024-04-14 01:41:30,253 basehttp 4356 16204 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:41:41,691 basehttp 4356 16204 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:41:41,909 basehttp 4356 16204 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:42:05,078 basehttp 4356 16204 "POST /admin/myhwapp4/order/ HTTP/1.1" 302 0
+INFO 2024-04-14 01:42:05,134 basehttp 4356 16204 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:42:05,373 basehttp 4356 16204 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2024-04-14 01:42:08,578 log 4356 16204 Internal Server Error: /admin/myhwapp4/order/1/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:42:08,586 basehttp 4356 16204 "GET /admin/myhwapp4/order/1/change/ HTTP/1.1" 500 156383
+INFO 2024-04-14 01:42:18,461 basehttp 4356 16204 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+ERROR 2024-04-14 01:42:21,990 log 4356 16204 Internal Server Error: /admin/myhwapp4/order/1/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:42:21,996 basehttp 4356 16204 "GET /admin/myhwapp4/order/1/change/ HTTP/1.1" 500 156383
+INFO 2024-04-14 01:42:23,425 basehttp 4356 16204 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+ERROR 2024-04-14 01:42:24,891 log 4356 16204 Internal Server Error: /admin/myhwapp4/order/4/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity, client_store.pk, pk, file_product) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:42:24,897 basehttp 4356 16204 "GET /admin/myhwapp4/order/4/change/ HTTP/1.1" 500 156362
+INFO 2024-04-14 01:42:42,085 basehttp 4356 16204 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:43:01,555 autoreload 4356 15572 E:\python_django\homework\hwproject\myhwapp4\admin.py changed, reloading.
+INFO 2024-04-14 01:43:02,410 autoreload 11104 4176 Watching for file changes with StatReloader
+WARNING 2024-04-14 01:43:03,804 log 11104 1064 Not Found: /
+WARNING 2024-04-14 01:43:03,805 basehttp 11104 1064 "GET / HTTP/1.1" 404 2478
+INFO 2024-04-14 01:43:09,745 basehttp 11104 1064 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:43:09,986 basehttp 11104 1064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2024-04-14 01:43:11,451 log 11104 1064 Internal Server Error: /admin/myhwapp4/order/4/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (file_product, pk, quantity) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (file_product, pk, quantity) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:43:11,459 basehttp 11104 1064 "GET /admin/myhwapp4/order/4/change/ HTTP/1.1" 500 155889
+INFO 2024-04-14 01:44:38,961 autoreload 11104 4176 E:\python_django\homework\hwproject\myhwapp4\admin.py changed, reloading.
+INFO 2024-04-14 01:44:39,819 autoreload 2708 5096 Watching for file changes with StatReloader
+INFO 2024-04-14 01:44:43,028 basehttp 2708 14268 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+ERROR 2024-04-14 01:44:45,039 log 2708 14268 Internal Server Error: /admin/myhwapp4/order/3/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity, pk) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity, pk) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:44:45,049 basehttp 2708 14268 "GET /admin/myhwapp4/order/3/change/ HTTP/1.1" 500 155485
+INFO 2024-04-14 01:44:55,163 basehttp 2708 14268 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+ERROR 2024-04-14 01:44:58,111 log 2708 14268 Internal Server Error: /admin/myhwapp4/order/2/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity, pk) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity, pk) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:44:58,118 basehttp 2708 14268 "GET /admin/myhwapp4/order/2/change/ HTTP/1.1" 500 156097
+INFO 2024-04-14 01:45:02,778 basehttp 2708 14268 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:45:27,896 autoreload 2708 5096 E:\python_django\homework\hwproject\myhwapp4\admin.py changed, reloading.
+INFO 2024-04-14 01:45:29,202 autoreload 2700 4720 Watching for file changes with StatReloader
+ERROR 2024-04-14 01:45:32,387 log 2700 13888 Internal Server Error: /admin/myhwapp4/order/2/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:45:32,397 basehttp 2700 13888 "GET /admin/myhwapp4/order/2/change/ HTTP/1.1" 500 155863
+ERROR 2024-04-14 01:45:34,545 log 2700 13888 Internal Server Error: /admin/myhwapp4/order/2/change/
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 837, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 652, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\forms\models.py", line 332, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (quantity) specified for Order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1948, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1804, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 1839, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "E:\python_django\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: Unknown field(s) (quantity) specified for Order. Check fields/fieldsets/exclude attributes of class OrderAdmin.
+ERROR 2024-04-14 01:45:34,551 basehttp 2700 13888 "GET /admin/myhwapp4/order/2/change/ HTTP/1.1" 500 156000
+INFO 2024-04-14 01:46:01,210 autoreload 2700 4720 E:\python_django\homework\hwproject\myhwapp4\admin.py changed, reloading.
+INFO 2024-04-14 01:46:02,165 autoreload 11336 3828 Watching for file changes with StatReloader
+INFO 2024-04-14 01:46:04,814 basehttp 11336 19272 "GET /admin/myhwapp4/order/2/change/ HTTP/1.1" 200 23213
+INFO 2024-04-14 01:46:05,025 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:46:40,066 basehttp 11336 19272 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:46:43,195 basehttp 11336 19272 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 26243
+INFO 2024-04-14 01:46:43,416 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:46:52,224 basehttp 11336 19272 "GET /admin/myhwapp4/order/ HTTP/1.1" 200 29772
+INFO 2024-04-14 01:46:52,445 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:46:54,634 basehttp 11336 19272 "GET /admin/myhwapp4/order/5/change/ HTTP/1.1" 200 22750
+INFO 2024-04-14 01:46:54,891 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:46:58,084 basehttp 11336 19272 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 21554
+INFO 2024-04-14 01:46:58,331 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-14 01:46:59,863 basehttp 11336 19272 "GET /admin/myhwapp4/product/8/change/ HTTP/1.1" 200 17348
+INFO 2024-04-14 01:47:00,097 basehttp 11336 19272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-15 17:46:56,419 autoreload 6388 25280 Watching for file changes with StatReloader
+INFO 2024-04-15 17:47:35,843 autoreload 6388 25280 E:\python_django\homework\hwproject\hwproject\settings.py changed, reloading.
+INFO 2024-04-15 17:47:36,799 autoreload 3056 6316 Watching for file changes with StatReloader
+WARNING 2024-04-15 17:47:39,180 log 3056 19176 Not Found: /
+WARNING 2024-04-15 17:47:39,184 basehttp 3056 19176 "GET / HTTP/1.1" 404 11975
+INFO 2024-04-15 17:47:39,512 basehttp 3056 15408 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2024-04-15 17:47:39,513 basehttp 3056 19176 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2024-04-15 17:47:39,514 basehttp 3056 4480 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2024-04-15 17:47:39,573 basehttp 3056 4480 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2024-04-15 17:47:40,110 log 3056 4480 Not Found: /favicon.ico
+WARNING 2024-04-15 17:47:40,112 basehttp 3056 4480 "GET /favicon.ico HTTP/1.1" 404 12037
+INFO 2024-04-15 17:47:45,094 views 3056 4480 hw3 page accessed
+INFO 2024-04-15 17:47:45,186 basehttp 3056 4480 "GET /hw4/ HTTP/1.1" 200 11485
+INFO 2024-04-15 17:47:47,638 basehttp 3056 4480 "GET /hw4/update_product/ HTTP/1.1" 200 13808
+WARNING 2024-04-15 17:47:50,112 log 3056 4480 Not Found: /hw4/client_orders/
+WARNING 2024-04-15 17:47:50,112 basehttp 3056 4480 "GET /hw4/client_orders/ HTTP/1.1" 404 13313
+INFO 2024-04-15 17:48:01,039 views 3056 4480 <WSGIRequest: GET '/hw4/client_orders/4/'> request received
+INFO 2024-04-15 17:48:01,527 basehttp 3056 4480 "GET /hw4/client_orders/4/ HTTP/1.1" 200 13017
+WARNING 2024-04-15 17:48:43,816 log 3056 4480 Not Found: /
+WARNING 2024-04-15 17:48:43,816 basehttp 3056 4480 "GET / HTTP/1.1" 404 11975
+INFO 2024-04-15 17:48:48,917 basehttp 3056 4480 "GET /admin/ HTTP/1.1" 200 23181
+INFO 2024-04-15 17:48:53,582 basehttp 3056 4480 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 35697
+INFO 2024-04-15 17:48:53,917 basehttp 3056 4480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-15 17:49:02,835 basehttp 3056 4480 "POST /admin/myhwapp4/client/ HTTP/1.1" 200 9968
+INFO 2024-04-15 17:49:03,146 basehttp 3056 19176 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2024-04-15 17:49:04,848 basehttp 3056 19176 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 35890
+INFO 2024-04-15 17:49:05,117 basehttp 3056 19176 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-15 17:49:12,535 basehttp 3056 19176 "POST /admin/myhwapp4/client/ HTTP/1.1" 200 9968
+INFO 2024-04-15 17:49:19,617 basehttp 3056 15408 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 35697
+INFO 2024-04-15 17:49:28,965 basehttp 3056 15408 "POST /admin/myhwapp4/client/ HTTP/1.1" 200 9971
+INFO 2024-04-15 17:49:31,890 basehttp 3056 1924 "GET /admin/myhwapp4/client/ HTTP/1.1" 200 35703
+INFO 2024-04-15 17:49:38,802 basehttp 3056 1924 "GET /admin/myhwapp4/product/ HTTP/1.1" 200 31009
+INFO 2024-04-15 17:49:39,072 basehttp 3056 1924 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-04-15 17:49:41,121 basehttp 3056 1924 "GET /admin/myhwapp4/product/?all= HTTP/1.1" 200 36971
+INFO 2024-04-15 17:49:41,409 basehttp 3056 1924 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

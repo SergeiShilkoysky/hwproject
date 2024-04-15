@@ -1,0 +1,13 @@
+{% extends 'myhwapp4/base.html' %}
+
+{% block content %}
+<h3> Client: {{ title }} ({{ name }})</h3>
+<h5> Список всех заказов клиента со списком товаров внутри каждого заказа </h5>
+<ul>
+    {% for item in items %}
+    дата заказа: {{ item.date_ordered }}
+    <li>{{ item }}</li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

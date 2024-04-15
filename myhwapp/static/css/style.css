@@ -1,0 +1,79 @@
+* {
+  /*обнуление стилей*/
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: url(https://avatars.mds.yandex.net/i?id=3619339b436296d52b80c3679445df05dda63d11-7086399-images-thumbs&n=13);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: Pacifico, sans-serif;
+}
+.reference {
+  color: cornflowerblue;
+  font-size: 16px;
+  line-height: 20px;
+}
+.h1_header {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: bold;
+}
+.h2_header {
+  color: coral;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 80px;
+}
+p {
+  color: rgb(145, 255, 0);
+}
+.paragraph {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  color: #7d7987;
+}
+.field {
+  width: 300px;
+  height: 20px;
+  outline: none;
+
+  font-size: 14px;
+  line-height: 30px;
+}
+.poper {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.menu {
+  text-align: left;
+  margin: 4pc;
+  padding: 1pc;
+}
+.reference:hover {
+  color: red;
+}
+.reference:active {
+  background-color: green;
+}
+
+div {
+  float: left; /* Выравнивание рисунка по левому краю */
+  background: #ecf0e9; /* Цвет фона */
+  padding: 4px; /* Поля вокруг картинки */
+  margin: 0 10px 5px 0; /* Отступы */
+}
+

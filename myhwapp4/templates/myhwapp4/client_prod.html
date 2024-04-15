@@ -1,0 +1,15 @@
+{% extends 'myhwapp4/base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<h2>{{ list }}: {{ title }} ({{ name }}) </h2>
+<h5> Продукты заказанные текущим пользователем за последние: {{ period }} дней </h5>
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

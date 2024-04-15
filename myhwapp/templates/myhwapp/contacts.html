@@ -1,0 +1,24 @@
+{% extends 'myhwapp/base.html' %}
+
+{% block title %}
+<h1 class="h1_header">Contacts</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h3 class="col-12 col-md-6 display-2">contacts form:</h3>
+    name <input class="field" type="text" required placeholder="Input name"/> <br/>
+    email <input class="field" type="email" placeholder="Input xxx@yyy.zzz"/> <br/>
+    birthday <input class="field" type="date"/> <br/>
+    <button type="submit" class="poper">Отправить</button>
+    <button type="reset" class="poper">Стереть</button>
+</div>
+{% endblock %}
+{% block footer %}
+<h3 class="row">В разработке принимали участие</h3>
+<ul>
+    <li>Иванов</li>
+    <li>Петров</li>
+    <li>Сидоров</li>
+</ul>
+{% endblock %}

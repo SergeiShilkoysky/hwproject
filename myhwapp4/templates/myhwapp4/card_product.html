@@ -1,0 +1,15 @@
+{% extends 'myhwapp4/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<h4>product: id={{ product.pk }} name={{ product.name_product }} is update: </h4>
+<ul>
+    <li>description: {{ product.description}}</li>
+    <li>price: {{ product.price }}</li>
+    <li>quantity: {{ product.quantity }}</li>
+    <li>date_add: {{ product.date_add_product }}</li>
+    <li>{{ product.image_product }}</li>
+    <li>{{ product.file_product }}</li>
+</ul>
+{% endblock %}

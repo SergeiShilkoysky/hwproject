@@ -1,0 +1,35 @@
+{% extends 'myhwapp4/base.html' %}
+
+{% block title %}
+<h1 class="h1_header">{{ title }}</h1>
+{% endblock %}
+
+
+<div style="display: flex; justify-content: left; align-items: center; margin-top: 30px;">
+
+    {% block content %}
+    <table style="border-collapse: collapse, width: 900px">
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; ">id</td>
+            <td style="border: 3px solid gray; padding: 10px">name</td>
+            <td style="border: 3px solid gray; padding: 10px">email</td>
+            <td style="border: 3px solid gray; padding: 10px">phone</td>
+            <td style="border: 3px solid gray; padding: 10px">address</td>
+            <td style="border: 3px solid gray; padding: 10px">date_reg</td>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; width: 100px">{{ item.id }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.name }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.email }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.phone }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.address }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.date_reg }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}
+

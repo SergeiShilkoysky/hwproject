@@ -1,0 +1,35 @@
+{% extends 'myhwapp4/base.html' %}
+
+{% block title %}
+<h1 class="h1_header">{{ title }}</h1>
+{% endblock %}
+
+
+<div style="display: flex; justify-content: left; align-items: center; margin-top: 30px;">
+
+    {% block content %}
+    <table style="border-collapse: collapse, width: 900px">
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; ">id</td>
+            <td style="border: 3px solid gray; padding: 10px">name_product</td>
+            <td style="border: 3px solid gray; padding: 10px">description</td>
+            <td style="border: 3px solid gray; padding: 10px">price</td>
+            <td style="border: 3px solid gray; padding: 10px">quantity</td>
+            <td style="border: 3px solid gray; padding: 10px">date_add</td>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td style="border: 3px solid gray; padding: 10px; width: 100px">{{ item.id }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.name_product }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.description }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.price }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.quantity }}</td>
+            <td style="border: 3px solid gray; padding: 10px">{{ item.date_add }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}
+
